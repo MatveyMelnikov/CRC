@@ -54,7 +54,7 @@ void test_crc_16()
 
 	memset(&test_data, 0xFF, CRC16_DATA_SIZE);
 
-	uint16_t result = crc_buffer_calculate_crc_16(&buffer, test_data, CRC16_DATA_SIZE);
+	uint16_t result = crc_buffer_calculate_crc_16(&buffer, test_data, CRC16_DATA_SIZE).i16;
 
 	printf("Test CRC16:\n");
 	print_word(result);

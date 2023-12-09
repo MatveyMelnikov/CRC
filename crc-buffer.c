@@ -25,7 +25,7 @@ crc_buffer_calculate_crc_7(crc_buffer_7* buffer, uint8_t* data, const uint8_t da
 	return (*buffer << 1) | 1;
 }
 
-uint16_t
+crc_16_result
 crc_buffer_calculate_crc_16(crc_buffer_16* buffer, uint8_t* data, const uint16_t data_length)
 {
 	*buffer = 0x0;
@@ -43,5 +43,5 @@ crc_buffer_calculate_crc_16(crc_buffer_16* buffer, uint8_t* data, const uint16_t
 		*buffer |= inputBit;
 	}
 
-	return *buffer;
+	return (crc_16_result) { *buffer };
 }
