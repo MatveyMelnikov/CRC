@@ -39,7 +39,11 @@ test_crc_7()
 	printf("Test CRC7:\n");
 	for (uint8_t i = 0; i < 3; i++)
 	{
-		uint8_t result = crc_buffer_calculate_crc_7(&buffer, test_data[i], CRC7_DATA_SIZE);
+		uint8_t result = crc_buffer_calculate_crc_7(
+			&buffer,
+			test_data[i],
+			CRC7_DATA_SIZE
+		);
 		print_byte(result);
 		assert(result == data_reference[i]);
 	}
@@ -54,7 +58,11 @@ void test_crc_16()
 
 	memset(&test_data, 0xFF, CRC16_DATA_SIZE);
 
-	uint16_t result = crc_buffer_calculate_crc_16(&buffer, test_data, CRC16_DATA_SIZE).i16;
+	uint16_t result = crc_buffer_calculate_crc_16(
+		&buffer,
+		test_data,
+		CRC16_DATA_SIZE
+	).i16;
 
 	printf("Test CRC16:\n");
 	print_word(result);
